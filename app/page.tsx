@@ -1,5 +1,4 @@
-import { WeAreSection } from "@/app/sections";
-import { DescriptionSection } from "@/app/sections";
+import { CoursesSection, DescriptionSection, WeAreSection } from "@/app/sections";
 import Header from "@/ui/components/header";
 import Logo from "@/ui/components/logo";
 import NavLinks from "@/ui/components/nav-links";
@@ -34,17 +33,9 @@ export default function Page() {
 
             {/* Section 3: Courses */}
 
-            <section className="flex flex-col items-center justify-center h-screen bg-yellow-300">
-                <h2>Courses</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </section>
+            <CoursesSection />
 
-            {/* Section 4: Description */}
-
-            <section className="flex flex-col items-center justify-center h-screen bg-green-400">
-                <h2>Description</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </section>
+            {/* Section 4: */}
         </main>
     );
 }
