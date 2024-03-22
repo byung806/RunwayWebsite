@@ -1,4 +1,6 @@
-import { CoursesSection, DescriptionSection, WeAreSection } from "@/app/sections";
+import { WeAreSection } from "@/ui/components/sections/we-are";
+import { DescriptionSection } from "@/ui/components/sections/description";
+import { CoursesSection } from "@/ui/components/sections/courses";
 
 export default function Page() {
     return (
@@ -14,8 +16,6 @@ export default function Page() {
             {/* Section 3: Courses */}
 
             <CoursesSection />
-
-            {/* Section 4: */}
         </main>
     );
 }
