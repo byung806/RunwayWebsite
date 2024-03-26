@@ -1,6 +1,6 @@
-import { WeAreSection } from "@/ui/components/sections/we-are";
-import { DescriptionSection } from "@/ui/components/sections/description";
-import { CoursesSection } from "@/ui/components/sections/courses";
+import WeAreSection from "@/ui/components/sections/we-are";
+import DescriptionSection from "@/ui/components/sections/description";
+import CoursesSection from "@/ui/components/sections/courses";
 
 export default function Page() {
     return (

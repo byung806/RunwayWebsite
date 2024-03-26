@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export function WeAreSection() {
+export default function WeAreSection() {
     return (
         <section className="flex-col items-center justify-center space-y-6 bg-gradient-to-br from-pink-100 to-violet-100 p-20">
             <div className="text-center text-3xl font-extrabold">
