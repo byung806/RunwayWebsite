@@ -5,6 +5,7 @@ const config: Config = {
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './ui/components/**/*.{js,ts,jsx,tsx,mdx}',
         './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './node_modules/preline/preline.js',
     ],
     theme: {
         extend: {
@@ -24,7 +25,7 @@ const config: Config = {
     },
     plugins: [
         require('@tailwindcss/forms'),
-        require("daisyui"),
+        require("preline/plugin"),
     ],
     daisyui: {
         themes: [
