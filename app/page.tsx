@@ -1,6 +1,7 @@
 import WeAreSection from "@/ui/components/sections/we-are";
 import DescriptionSection from "@/ui/components/sections/description";
 import CoursesSection from "@/ui/components/sections/courses";
+import NewsletterSection from "@/ui/components/sections/newsletter";
 
 export default function Page() {
     return (
@@ -16,6 +17,8 @@ export default function Page() {
             {/* Section 3: Courses */}
 
             <CoursesSection />
+
+            <NewsletterSection />
         </main>
     );
 }
