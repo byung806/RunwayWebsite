@@ -1,4 +1,4 @@
-# Whizworks
+# Runway
 
 ## Installation
 ### Clone this repository

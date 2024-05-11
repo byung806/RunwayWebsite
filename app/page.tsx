@@ -1,24 +1,41 @@
-import WeAreSection from "@/ui/components/sections/we-are";
-import DescriptionSection from "@/ui/components/sections/description";
-import CoursesSection from "@/ui/components/sections/courses";
-import NewsletterSection from "@/ui/components/sections/newsletter";
+'use client'
+
+import BoardingPass from "@/ui/components/boarding-pass";
+import Image from "next/image";
 
 export default function Page() {
+    function transforms(x: number, y: number, card: HTMLElement) {
+        let constrain = 3000;
+        let box = card.getBoundingClientRect();
+        console.log(box);
+        let calcX = -(y - box.y - (box.height / 2)) / constrain;
+        let calcY = (x - box.x - (box.width / 2)) / constrain;
+
+        return "perspective(100px) " + "rotateX(" + calcX + "deg) " + "rotateY(" + calcY + "deg)";
+    };
+
+    function onMouseMoveCard(event: React.MouseEvent<HTMLDivElement>) {
+        const card = document.getElementById("boarding-pass");
+
+        window.requestAnimationFrame(() => {
+            if (card) card.style.transform = transforms(event.clientX, event.clientY, card);
+        })
+    }
+
     return (
-        <main className="flex min-h-screen flex-col">
-            {/* Section 1: We Are */}
-
-            <WeAreSection />
-
-            {/* Section 2: Description */}
-
-            <DescriptionSection />
-
-            {/* Section 3: Courses */}
-
-            <CoursesSection />
-
-            <NewsletterSection />
+        <main className="flex w-screen h-screen bg-gray-100 items-center justify-center" onMouseMove={onMouseMoveCard}>
+            {/* <Image
+                className="absolute bottom-0"
+                src="/banner.jpg"
+                alt="clouds"
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                }}
+                width={500}
+                height={300}
+            /> */}
+            <BoardingPass />
         </main>
     );
 }
