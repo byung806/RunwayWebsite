@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #818589; 
+    border-bottom: 2px solid #e0e0e0; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px; 
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; 
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 20px; 
+  }
+  
+  .header-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: e0e0e0; 
+  }
+  
+  .header-link:hover {
+    text-decoration: underline;
+  }

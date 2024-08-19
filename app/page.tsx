@@ -2,7 +2,9 @@
 
 import Badge from '@/ui/components/Badge';
 import { useState } from 'react';
-import Marquee from 'react-fast-marquee';
+import React from 'react';
+import '@/ui/components/header.css';
+import Header from '@/ui/components/header';
 
 
 export default function Page() {
@@ -10,8 +12,9 @@ export default function Page() {
 
     return (
         <div className="flex flex-col space-y-8 w-screen h-screen bg-black items-center justify-center">
+            <Header />
             <div className="flex space-x-8">
-                <img className="w-1/4" src="/images/loomletter-logo.png" alt="Loomletter Logo" />
+                <img src={require('@/public/phoneSS.png')} alt="PhoneSS" />
                 <div className='space-y-8'>
                     <h1 className="bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 text-6xl font-bold text-transparent">
                         Learn a new topic
