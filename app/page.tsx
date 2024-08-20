@@ -5,7 +5,7 @@ import { useState } from 'react';
 import React from 'react';
 import '@/ui/components/header.css';
 import Header from '@/ui/components/header';
-
+import { BrowserRouter } from 'react-router-dom';
 
 export default function Page() {
     const [name, setName] = useState("");

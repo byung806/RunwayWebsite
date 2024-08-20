@@ -14,9 +14,9 @@ function Header() {
                 <span className="brand-name">Runway</span>
             </div>
             <div className="header-right">
-                <a href="/about-us" className="header-link">About Us</a>
-                <a href="/our-mission" className="header-link">Our Mission</a>
-                <a href="/contact-us" className="header-link">Contact Us</a>
+                <a href="/AboutUs" className="header-link">About Us</a>
+                <a href="/OurMission" className="header-link">Our Mission</a>
+                <a href="/ContactUs" className="header-link">Contact Us</a>
             </div>
         </header>
     );

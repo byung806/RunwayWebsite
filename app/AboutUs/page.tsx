@@ -1,7 +1,8 @@
+import Header from '@/ui/components/header';
 import React from 'react';
-import Header from '../components/header';
 
-export default function OurMission() {
+
+export default function AboutUs() {
     return (
         <div>
             <Header />
