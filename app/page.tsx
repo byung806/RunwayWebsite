@@ -1,20 +1,16 @@
 'use client'
 
-import Badge from '@/ui/components/Badge';
-import { useState } from 'react';
-import React from 'react';
-import '@/ui/components/header.css';
 import Header from '@/ui/components/header';
-import { BrowserRouter } from 'react-router-dom';
+import '@/ui/components/header.css';
+import { useState } from 'react';
 
 export default function Page() {
     const [name, setName] = useState("");
 
     return (
-        <div className="flex flex-col space-y-8 w-screen h-screen bg-black items-center justify-center">
-            <Header />
-            <div className="flex space-x-8">
-                <img src={require('@/public/phoneSS.png')} alt="PhoneSS" />
+        <div className="flex flex-col space-y-8 w-screen h-screen items-center justify-center">
+            <div className="flex space-x-8 items-center">
+                <img src='phoneSS.png' alt="PhoneSS" />
                 <div className='space-y-8'>
                     <h1 className="bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 text-6xl font-bold text-transparent">
                         Learn a new topic
