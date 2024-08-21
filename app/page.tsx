@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { basePath } from '../next.config';
 
 export default function Page() {
     const [name, setName] = useState("");
@@ -12,7 +13,7 @@ export default function Page() {
             <div className="flex flex-col space-y-8 w-screen h-screen items-center justify-center">
                 <div className="flex space-x-8 items-center">
                     <Image
-                        src='/ss-1.png'
+                        src={`${basePath}/ss-1.png`}
                         alt="phone screenshot"
                         width={300}
                         height={500}
@@ -73,7 +74,7 @@ export default function Page() {
                         </div>
                     </div>
                     <Image
-                        src='/ss-2.png'
+                        src={`${basePath}/ss-2.png`}
                         alt="phone screenshot"
                         width={300}
                         height={500}

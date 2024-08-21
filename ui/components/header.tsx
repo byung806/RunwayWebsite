@@ -1,10 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
+import { basePath } from "../../next.config";
 
 function Header() {
     return (
         <header className="flex justify-between items-center px-10 py-3 w-full top-0 absolute">
             <Link href="/" className="flex items-center gap-4">
-                <img src='/icon.png' alt="Runway Logo" className="h-14" />
+                <Image
+                    src={`${basePath}/icon.png`}
+                    width={50}
+                    height={50}
+                    alt="Runway Logo"
+                />
                 <span className="text-xl font-bold text-white">Runway</span>
             </Link>
             <div className="flex gap-4">
