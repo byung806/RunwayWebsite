@@ -45,7 +45,7 @@ export default function Page() {
             <div className="flex space-x-10 p-10 w-screen h-[400px] items-center justify-center text-white">
                 <div className="flex flex-col space-y-4 items-center text-center w-full h-full p-10 bg-[#252525] rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-600 transition duration-300 hover:scale-105">
                     <h1 className="text-4xl font-bold">Habit-building.</h1>
-                    <p className="text-3xl">Uses proven techniques to help you learn something new every day.</p>
+                    <p className="text-3xl">Runway uses proven techniques to help you learn something new every day.</p>
                 </div>
                 <div className="flex flex-col space-y-4 items-center text-center w-full h-full p-10 bg-[#252525] rounded-2xl bg-gradient-to-br from-pink-600 to-purple-600 transition duration-300 hover:scale-105">
                     <h1 className="text-4xl font-bold">Convenient.</h1>
@@ -53,7 +53,7 @@ export default function Page() {
                 </div>
                 <div className="flex flex-col space-y-4 items-center text-center w-full h-full p-10 bg-[#252525] rounded-2xl bg-gradient-to-b from-orange-600 to-red-600 transition duration-300 hover:scale-105">
                     <h1 className="text-4xl font-bold">Competitive.</h1>
-                    <p className="text-3xl">Runway game-ifies learning - add friends and compete with them.</p>
+                    <p className="text-3xl">Runway gamifies learning - add friends and compete with them, or test your skills against the world.</p>
                 </div>
             </div>
 
