@@ -16,6 +16,12 @@ const config: Config = {
                     "0%": { opacity: "0" },
                     "100%": { opacity: "1" }
                 }
+            },
+            dropShadow: {
+                glow: [
+                    "0 0px 20px rgba(255, 255, 255, 0.5)",
+                    "0 0px 65px rgba(255, 255, 255, 0.3)"
+                ]
             }
         }
     },

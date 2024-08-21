@@ -23,7 +23,7 @@ export default function Page() {
                             Learn every day.
                             Have fun doing it.
                         </h1>
-                        <p className="text-lg font-bold text-white">Coming soon to iOS and Android!</p>
+                        <p className="text-lg font-bold text-white">The ultimate learning app. Coming soon to iOS and Android!</p>
                         <form className='flex space-x-4'>
                             {/* <input
                                 type="text"
@@ -33,8 +33,8 @@ export default function Page() {
                                 className="text-2xl bg-neutral-100 rounded-xl p-4 outline-none min-w-0 w-60"
                             /> */}
                             <div className="flex-col flex w-full text-2xl text-black font-bold">
-                                <Link href="/" className="bg-gradient-to-tr px-10 from-pink-400 to-purple-400 py-4 w-fit rounded-full transition duration-300 hover:scale-105">
-                                    <p className="text-center text-black">Download</p>
+                                <Link href="/" className="px-10 bg-gradient-to-tr from-pink-400 to-purple-400 py-4 w-fit rounded-full transition duration-300 hover:scale-105">
+                                    <p className="text-center text-white">Download</p>
                                 </Link>
                             </div>
                         </form>
@@ -50,7 +50,7 @@ export default function Page() {
                 </div>
                 <div className="flex flex-col space-y-4 items-center text-center w-full h-full p-10 bg-[#252525] rounded-2xl bg-gradient-to-br from-pink-600 to-purple-600 transition duration-300 hover:scale-105">
                     <h1 className="text-4xl font-bold">Convenient.</h1>
-                    <p className="text-3xl">Runway's unique 2 minutes per day lessons easily fit into your busy schedule.</p>
+                    <p className="text-3xl">Runway&apos;s unique 2 minutes per day lessons easily fit into your busy schedule.</p>
                 </div>
                 <div className="flex flex-col space-y-4 items-center text-center w-full h-full p-10 bg-[#252525] rounded-2xl bg-gradient-to-b from-orange-600 to-red-600 transition duration-300 hover:scale-105">
                     <h1 className="text-4xl font-bold">Competitive.</h1>
