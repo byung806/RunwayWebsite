@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function OurMission() {
+export default function PrivacyPolicy() {
     return (
-        <div>
+        <div className="text-white">
             <h1>Privacy Policy</h1>
             <p>eh.</p>
         </div>

@@ -23,8 +23,7 @@ const config: Config = {
         animation: ["motion-safe"],
     },
     plugins: [
-        require('@tailwindcss/forms'),
-        require('daisyui'),
+        require('@tailwindcss/forms')
     ]
 };
 
