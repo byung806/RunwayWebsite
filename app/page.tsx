@@ -2,12 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import { basePath } from '../next.config';
 
 export default function Page() {
-    const [name, setName] = useState("");
-
     return (
         <div className="flex flex-col">
             <div className="flex flex-col space-y-8 w-screen h-screen items-center justify-center">
@@ -37,7 +34,7 @@ export default function Page() {
                             /> */}
                             <div className="flex-col flex w-full text-lg text-black font-bold">
                                 <Link href="/" className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105">
-                                    <p className="text-center text-white">Download, it's free</p>
+                                    <p className="text-center text-white">Download, it&apos;s free</p>
                                 </Link>
                             </div>
                         </form>
