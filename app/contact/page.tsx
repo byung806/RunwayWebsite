@@ -1,8 +1,14 @@
+'use client';
+
 import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function ContactUs() {
-
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -25,17 +31,17 @@ export default function ContactUs() {
 
     return (
         <div className="flex flex-col gap-4 w-screen h-screen justify-center items-center">
-            <p className="text-white text-4xl">Get in touch</p>
-            <p className="text-white text-2xl">Anytime, anywhere.</p>
+            <p className="text-4xl">Get in touch</p>
+            <p className="text-2xl">Anytime, anywhere.</p>
 
-            <form className="flex flex-col gap-4 w-full max-w-md" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-4 max-w-md w-full" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     name="name"
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-purple-500"
+                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-[#8b45a4]"
                     required
                 />
                 <input
@@ -44,7 +50,7 @@ export default function ContactUs() {
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-purple-500"
+                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-[#8b45a4]"
                     required
                 />
                 <textarea
@@ -53,12 +59,12 @@ export default function ContactUs() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-purple-500"
+                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-[#8b45a4]"
                     required
                 />
                 <button
                     type="submit"
-                    className="py-3 px-6 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition duration-300"
+                    className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105 text-white font-bold"
                 >
                     Send Message
                 </button>
