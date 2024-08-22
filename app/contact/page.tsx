@@ -1,159 +1,68 @@
-'use client';
-import { useState } from "react";
-import {
-    Button,
-    Container,
-    FormControl,
-    FormErrorMessage,
-    FormLabel,
-    Heading,
-    Input,
-    Text,
-    Textarea,
-    useToast,
-} from "@chakra-ui/react";
-import { sendContactForm } from "../../lib/api";
-
-
-const initValues = { name: "", email: "", subject: "", message: "" };
-
-const initState = { isLoading: false, error: "", values: initValues };
+import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function ContactUs() {
 
-    const initValues = { name: "", email: "", subject: "", message: "" };
 
-    const initState = { isLoading: false, error: "", values: initValues };
-    const toast = useToast();
-    const [state, setState] = useState(initState);
-    const [touched, setTouched] = useState({});
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-    const { values, isLoading, error } = state;
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
 
-    const onBlur = ({ target }) =>
-        setTouched((prev) => ({ ...prev, [target.name]: true }));
-
-    const handleChange = ({ target }) =>
-        setState((prev) => ({
-            ...prev,
-            values: {
-                ...prev.values,
-                [target.name]: target.value,
-            },
-        }));
-
-    const onSubmit = async () => {
-        setState((prev) => ({
-            ...prev,
-            isLoading: true,
-        }));
         try {
-            await sendContactForm(values);
-            setTouched({});
-            setState(initState);
-            toast({
-                title: "Message sent.",
-                status: "success",
-                duration: 2000,
-                position: "top",
-            });
+            await axios.post('/api/send-email', formData);
+            alert('Message sent successfully!');
+            setFormData({ name: '', email: '', message: '' });
         } catch (error) {
-            setState((prev) => ({
-                ...prev,
-                isLoading: false,
-                error: error.message,
-            }));
+            alert('Failed to send message, please try again later.');
         }
     };
 
     return (
-        <div>
-            <div className="flex flex-col gap-4 w-screen h-screen justify-center items-center">
-                <p className="text-white text-4xl">Get in touch</p>
-                <p className="text-white text-2xl">Anytime, anywhere.</p>
-            </div >
+        <div className="flex flex-col gap-4 w-screen h-screen justify-center items-center">
+            <p className="text-white text-4xl">Get in touch</p>
+            <p className="text-white text-2xl">Anytime, anywhere.</p>
 
-            <Container maxW="450px" mt={12}>
-                <Heading>Contact</Heading>
-                {error && (
-                    <Text color="red.300" my={4} fontSize="xl">
-                        {error}
-                    </Text>
-                )}
-
-                <FormControl isRequired isInvalid={touched.name && !values.name} mb={5}>
-                    <FormLabel>Name</FormLabel>
-                    <Input
-                        type="text"
-                        name="name"
-                        errorBorderColor="red.300"
-                        value={values.name}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                    />
-                    <FormErrorMessage>Required</FormErrorMessage>
-                </FormControl>
-
-                <FormControl isRequired isInvalid={touched.email && !values.email} mb={5}>
-                    <FormLabel>Email</FormLabel>
-                    <Input
-                        type="email"
-                        name="email"
-                        errorBorderColor="red.300"
-                        value={values.email}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                    />
-                    <FormErrorMessage>Required</FormErrorMessage>
-                </FormControl>
-
-                <FormControl
-                    mb={5}
-                    isRequired
-                    isInvalid={touched.subject && !values.subject}
+            <form className="flex flex-col gap-4 w-full max-w-md" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-purple-500"
+                    required
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-purple-500"
+                    required
+                />
+                <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-purple-500"
+                    required
+                />
+                <button
+                    type="submit"
+                    className="py-3 px-6 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition duration-300"
                 >
-                    <FormLabel>Subject</FormLabel>
-                    <Input
-                        type="text"
-                        name="subject"
-                        errorBorderColor="red.300"
-                        value={values.subject}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                    />
-                    <FormErrorMessage>Required</FormErrorMessage>
-                </FormControl>
-
-                <FormControl
-                    isRequired
-                    isInvalid={touched.message && !values.message}
-                    mb={5}
-                >
-                    <FormLabel>Message</FormLabel>
-                    <Textarea
-                        type="text"
-                        name="message"
-                        rows={4}
-                        errorBorderColor="red.300"
-                        value={values.message}
-                        onChange={handleChange}
-                        onBlur={onBlur}
-                    />
-                    <FormErrorMessage>Required</FormErrorMessage>
-                </FormControl>
-
-                <Button
-                    variant="outline"
-                    colorScheme="blue"
-                    isLoading={isLoading}
-                    disabled={
-                        !values.name || !values.email || !values.subject || !values.message
-                    }
-                    onClick={onSubmit}
-                >
-                    Submit
-                </Button>
-            </Container>
+                    Send Message
+                </button>
+            </form>
         </div>
     );
 }
