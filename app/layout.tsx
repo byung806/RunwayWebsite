@@ -1,5 +1,5 @@
 import '@/ui/global.css';
-import { notosans } from '@/ui/fonts';
+import { notosans, lato, inter } from '@/ui/fonts';
 import Header from '@/ui/components/header';
 import Footer from '@/ui/components/footer';
 
