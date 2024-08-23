@@ -29,7 +29,10 @@ export default function FAQ() {
     ];
 
     return (
-        <div className="flex flex-col gap-4 h-screen justify-center items-center pt-10 max-w-[70rem] mx-auto">
+        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] mx-auto">
+            {/* Header height */}
+            <div className='h-20'></div>
+
             <p className="text-black text-6xl mb-16 text-center leading-tight">Frequently Asked Questions</p>
 
             {faqData.map((faq, index) => {
