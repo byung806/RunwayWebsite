@@ -17,11 +17,11 @@ export default function Page() {
                     />
                     <div className='space-y-8'>
                         <h1 className="w-[540px] text-6xl font-bold">
-                            Learn about
+                            Get ready to
                             <h1 className='bg-clip-text py-2 bg-gradient-to-t from-[#8b49a3] to-[#723687] text-transparent'>
-                                thing
+                                BLAST
                             </h1>
-                            in 2 minutes.
+                            off!
                         </h1>
                         <p className="text-lg font-bold text-[#6b6b78]">The ultimate daily learning app. Coming soon to iOS and Android!</p>
                         <form className='flex space-x-4'>

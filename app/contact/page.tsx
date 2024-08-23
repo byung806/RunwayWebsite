@@ -1,74 +1,72 @@
 'use client';
-
 import React, { useState } from 'react';
-import axios from 'axios';
+import { FaInstagram, FaTiktok } from 'react-icons/fa';
 
 export default function ContactUs() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
+    // State to manage which dropdown is open
+    const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
+    // Function to toggle dropdowns
+    const toggleDropdown = (index: number) => {
+        setOpenDropdown(openDropdown === index ? null : index);
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        try {
-            await axios.post('/api/send-email', formData);
-            alert('Message sent successfully!');
-            setFormData({ name: '', email: '', message: '' });
-        } catch (error) {
-            alert('Failed to send message, please try again later.');
-        }
-    };
+    // Example questions and answers
+    const faqData = [
+        {
+            question: "What is Runway's mission?",
+            answer: "We want to make learning fun and easy for anyone with a busy schedule. Our daily lessons on a broad range of topics and be completed in 2 minutes!",
+        },
+        {
+            question: "What platforms can I download Runway on?",
+            answer: "Runway is available on both the Apple App Store and Google Play Store!",
+        },
+        {
+            question: "Where do you get your content from?",
+            answer: "We have a team of content creators who each specialize in a certain area. For example, we have Sienna, our astronomy expert! All out content is edited by our chief editor, Bryan!",
+        },
+        {
+            question: "Who can use Runway?",
+            answer: "As long as you have a compatible device, anyone can use Runway! Our content is versatile and easy to understand. The goal is to expose you to new subjects so you can explore them deeper on your own.",
+        },
+        {
+            question: "How can I join the Runway team?",
+            answer: "There are two main roles as part of the Runway team: a content creator and a marketing expert. Shoot us an email telling us which role you would like to apply for and we'll send you the corresponding form!",
+        },
+    ];
 
     return (
-        <div className="flex flex-col gap-4 w-screen h-screen justify-center items-center">
-            <p className="text-4xl">Get in touch</p>
-            <p className="text-2xl">Anytime, anywhere.</p>
+        <div className="flex flex-col gap-4 w-screen h-screen justify-center items-center pt-10">
+            <p className="text-black text-4xl mb-4">Frequently Asked Questions</p>
 
-            <form className="flex flex-col gap-4 max-w-md w-full" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-[#8b45a4]"
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-[#8b45a4]"
-                    required
-                />
-                <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="p-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-[#8b45a4]"
-                    required
-                />
-                <button
-                    type="submit"
-                    className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105 text-white font-bold"
-                >
-                    Send Message
-                </button>
-            </form>
+            {faqData.map((faq, index) => (
+                <div key={index} className="w-3/4">
+                    <button
+                        className="w-full text-left py-3 px-5 bg-gray-200 text-black rounded-lg focus:outline-none"
+                        onClick={() => toggleDropdown(index)}
+                    >
+                        {faq.question}
+                    </button>
+                    {openDropdown === index && (
+                        <div className="mt-2 px-5 py-3 bg-gray-100 text-black rounded-lg">
+                            {faq.answer}
+                        </div>
+                    )}
+                </div>
+            ))}
+            <div className="flex flex-col items-center gap-2 pb-10">
+                <p className="text-black text-lg">
+                    Contact us at: <a href="mailto:runwaystem@gmail.com" className="text-blue-500 underline">runwaystem@gmail.com</a>
+                </p>
+                <div className="flex space-x-4 mt-2">
+                    <a href="https://www.instagram.com/runwaystem?igsh=ZGhqMm5vZjFocWQw" target="_blank" rel="noopener noreferrer" className="text-pink-500 text-3xl">
+                        <FaInstagram />
+                    </a>
+                    <a href="https://www.tiktok.com/@runway1694?_t=8p6N2aCHiW2&_r=1" target="_blank" rel="noopener noreferrer" className="text-black text-3xl">
+                        <FaTiktok />
+                    </a>
+                </div>
+            </div>
         </div>
     );
 }
