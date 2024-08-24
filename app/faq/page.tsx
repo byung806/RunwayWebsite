@@ -29,11 +29,11 @@ export default function FAQ() {
     ];
 
     return (
-        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] mx-auto">
+        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] mx-auto min-h-screen">
             {/* Header height */}
             <div className='h-20'></div>
 
-            <p className="text-black text-6xl mb-16 text-center leading-tight">Frequently Asked Questions</p>
+            <p className="text-black text-6xl mb-16 text-center leading-tight font-bold">Frequently Asked Questions</p>
 
             {faqData.map((faq, index) => {
                 const [open, setOpen] = useState(false);
@@ -55,7 +55,9 @@ export default function FAQ() {
             })}
             <div className="flex flex-col items-center gap-2 pb-10">
                 <p className="text-black text-lg">
-                    Contact us at: <a href="mailto:runwaystem@gmail.com" className="text-blue-500 underline">runwaystem@gmail.com</a>
+                    Contact us at <a href="mailto:runwaystem@gmail.com" className="text-blue-500 underline">runwaystem@gmail.com</a>
+                    {' '}
+                    and follow us on social media!
                 </p>
                 <div className="flex space-x-4 mt-2">
                     <a href="https://www.instagram.com/runwaystem" target="_blank" rel="noopener noreferrer" className="text-pink-500 text-3xl">
