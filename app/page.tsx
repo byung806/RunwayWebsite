@@ -66,7 +66,7 @@ export default function Page() {
                         height={500}
                     />
                     <div className='space-y-8'>
-                        <h1 className="w-[540px] text-6xl font-bold leading-[4.5rem] relative">
+                        <h1 className="w-[540px] text-6xl font-bold leading-[5rem] relative">
                             Learn about
                             {' '}
 
@@ -74,7 +74,7 @@ export default function Page() {
                                 {isPlaying ? <FaRegPauseCircle /> : <FaRegPlayCircle />}
                             </button>
 
-                            <TextTransition inline={true} className='text-6xl' springConfig={presets.wobbly} style={{
+                            <TextTransition inline={true} className='text-7xl' springConfig={presets.wobbly} style={{
                                 color: TEXTS[index % TEXTS.length].color,
                             }}>
                                 {TEXTS[index % TEXTS.length].name}
