@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { basePath } from '../next.config';
 import TextTransition, { presets } from 'react-text-transition';
 import { useEffect, useState } from 'react';
-import { FaRegPauseCircle, FaRegPlayCircle } from "react-icons/fa";
+import { FaRegPauseCircle, FaRegPlayCircle, FaApple } from "react-icons/fa";
 
 
 const TEXTS = [
@@ -65,12 +65,12 @@ export default function Page() {
                         width={300}
                         height={500}
                     />
-                    <div className='space-y-8'>
+                    <div className='space-y-6'>
                         <h1 className="w-[540px] text-6xl font-bold leading-[5rem] relative">
                             Learn about
                             {' '}
 
-                            <button onClick={() => setIsPlaying(!isPlaying)} className='text-3xl text-[#d1d0d2]'>
+                            <button onClick={() => setIsPlaying(!isPlaying)} className='text-3xl text-[#d1d0d2] z-10'>
                                 {isPlaying ? <FaRegPauseCircle /> : <FaRegPlayCircle />}
                             </button>
 
@@ -83,14 +83,19 @@ export default function Page() {
                             {' '}
                             in 2 minutes
                         </h1>
-                        <p className="text-lg font-bold text-[#6b6b78]">The ultimate daily learning app. Coming soon to iOS and Android!</p>
+                        <p className="text-lg font-bold text-[#6b6b78]">The ultimate daily learning app, for iOS and Android.</p>
                         <form className='flex space-x-4'>
                             <div className="flex-col flex w-full text-lg text-black font-bold">
-                                <Link href="/" className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105">
-                                    <p className="text-center text-white">Download, it&apos;s free</p>
+                                {/* <Link href="/" className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105">
+                                    <p className="text-center text-white">Download, it's free</p>
+                                </Link> */}
+                                <Link href="https://testflight.apple.com/join/ZSrzVEeb" className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105 flex flex-row justify-center items-center space-x-2">
+                                    <FaApple className='text-white text-2xl' />
+                                    <p className="text-center text-white">Download the free beta</p>
                                 </Link>
                             </div>
                         </form>
+                        <p className="text-lg font-bold text-[#6b6b78]">Coming soon to the App Store and Google Play!</p>
                     </div>
                 </div>
             </div>
