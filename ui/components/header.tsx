@@ -4,7 +4,7 @@ import { basePath } from "../../next.config";
 
 export default function Header() {
     return (
-        <header className="flex bg-white justify-between items-center px-28 py-3 w-full border-b border-[#dedede] top-0 absolute">
+        <header className="flex bg-white justify-between items-center px-28 py-3 w-full border-b border-[#dedede] top-0 fixed font-bold">
             <Link href="/" className="flex items-center gap-4">
                 <Image
                     src={`${basePath}/icon.png`}
