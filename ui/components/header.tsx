@@ -18,7 +18,7 @@ export default function Header() {
                 {/* <Link href="/about-us" className="text-lg text-white rounded-full hover:bg-[#252525] p-2 px-4 transition duration-300">About Us</Link> */}
                 {/* <Link href="/our-mission" className="text-lg text-white rounded-full hover:bg-[#252525] p-2 px-4 transition duration-300">Our Mission</Link> */}
                 <Link href="/faq" className="text-lg text-[#6b6b78] hover:text-[#2e2e2e] rounded-full hover:bg-[#f1f2f4] p-2 px-4 transition duration-300">FAQ</Link>
-                <Link href="/privacy-policy" className="text-lg text-[#6b6b78] hover:text-[#2e2e2e] rounded-full hover:bg-[#f1f2f4] p-2 px-4 transition duration-300">Privacy Policy</Link>
+                <Link href="/features" className="text-lg text-[#6b6b78] hover:text-[#2e2e2e] rounded-full hover:bg-[#f1f2f4] p-2 px-4 transition duration-300">Features</Link>
             </div>
         </header>
     );

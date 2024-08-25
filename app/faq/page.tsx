@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { FaInstagram, FaTiktok } from 'react-icons/fa';
 
 export default function FAQ() {
-    // Example questions and answers
     const faqData = [
         {
             question: "What is Runway's mission?",
@@ -29,45 +28,46 @@ export default function FAQ() {
     ];
 
     return (
-        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] mx-auto min-h-screen">
-            {/* Header height */}
-            <div className='h-20'></div>
+        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] mx-auto">
+            <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] mx-auto min-h-screen">
+                {/* Header height */}
+                <div className='h-20'></div>
 
-            <p className="text-black text-6xl mb-16 text-center leading-tight font-bold">Frequently Asked Questions</p>
+                <p className="text-black text-6xl mb-16 text-center leading-tight font-bold">Frequently Asked Questions</p>
 
-            {faqData.map((faq, index) => {
-                const [open, setOpen] = useState(false);
-                return (
-                    <div key={index} className="w-full">
-                        <button
-                            className="w-full text-left text-xl p-5 bg-[#f1f2f4] rounded-xl focus:outline-none"
-                            onClick={() => { setOpen(!open); }}
-                        >
-                            {faq.question}
-                            {open && (
-                                <div className="mt-2 text-base bg-[#f1f2f4] text-[#6b6b78] rounded-lg">
-                                    {faq.answer}
-                                </div>
-                            )}
-                        </button>
+                {faqData.map((faq, index) => {
+                    const [open, setOpen] = useState(false);
+                    return (
+                        <div key={index} className="w-full">
+                            <button
+                                className="w-full text-left text-xl p-5 bg-[#f1f2f4] rounded-xl focus:outline-none"
+                                onClick={() => { setOpen(!open); }}
+                            >
+                                {faq.question}
+                                {open && (
+                                    <div className="mt-2 text-base bg-[#f1f2f4] text-[#6b6b78] rounded-lg">
+                                        {faq.answer}
+                                    </div>
+                                )}
+                            </button>
+                        </div>
+                    );
+                })}
+                <div className="flex flex-col items-center gap-2 pb-10">
+                    <p className="text-black text-lg">
+                        Contact us at <a href="mailto:runwaystem@gmail.com" className="text-blue-500 underline">runwaystem@gmail.com</a>
+                        {' '}
+                        and follow us on social media!
+                    </p>
+                    <div className="flex space-x-4 mt-2">
+                        <a href="https://www.instagram.com/runwaystem" target="_blank" rel="noopener noreferrer" className="text-pink-500 text-3xl">
+                            <FaInstagram />
+                        </a>
+                        <a href="https://www.tiktok.com/@runway1694" target="_blank" rel="noopener noreferrer" className="text-black text-3xl">
+                            <FaTiktok />
+                        </a>
                     </div>
-                );
-            })}
-            <div className="flex flex-col items-center gap-2 pb-10">
-                <p className="text-black text-lg">
-                    Contact us at <a href="mailto:runwaystem@gmail.com" className="text-blue-500 underline">runwaystem@gmail.com</a>
-                    {' '}
-                    and follow us on social media!
-                </p>
-                <div className="flex space-x-4 mt-2">
-                    <a href="https://www.instagram.com/runwaystem" target="_blank" rel="noopener noreferrer" className="text-pink-500 text-3xl">
-                        <FaInstagram />
-                    </a>
-                    <a href="https://www.tiktok.com/@runway1694" target="_blank" rel="noopener noreferrer" className="text-black text-3xl">
-                        <FaTiktok />
-                    </a>
                 </div>
             </div>
-        </div>
-    );
+            );
 }
