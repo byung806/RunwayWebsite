@@ -100,7 +100,7 @@ export default function Page() {
                                     <p className="text-center text-white">Download, it's free</p>
                                 </Link> */}
                         <Link
-                            href="https://testflight.apple.com/join/ZSrzVEeb"
+                            href="https://testflight.apple.com/join/Aw2kB9mT"
                             className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
                         >
                             <FaApple className="text-2xl text-white" />
