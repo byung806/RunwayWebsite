@@ -28,11 +28,11 @@ export default function FAQ() {
     ];
 
     return (
-        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] mx-auto min-h-screen">
+        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] px-10 mx-auto min-h-screen">
             {/* Header height */}
             <div className='h-20'></div>
 
-            <p className="text-black text-6xl mb-16 text-center leading-tight font-bold">Frequently Asked Questions</p>
+            <p className="text-black text-4xl md:text-6xl mb-16 text-center leading-tight font-bold">Frequently Asked Questions</p>
 
             {faqData.map((faq, index) => {
                 const [open, setOpen] = useState(false);
