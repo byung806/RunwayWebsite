@@ -100,17 +100,17 @@ export default function Page() {
                                     <p className="text-center text-white">Download, it's free</p>
                                 </Link> */}
                         <Link
-                            href="https://testflight.apple.com/join/Aw2kB9mT"
+                            href="https://apps.apple.com/app/runway-gamify-learning/id6639588047"
                             className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
                         >
                             <FaApple className="text-2xl text-white" />
                             <p className="text-center text-lg text-white">
-                                Download the free beta
+                                Download
                             </p>
                         </Link>
                     </form>
                     <p className="text-center text-lg font-bold text-[#6b6b78] md:text-left">
-                        Coming soon to the App Store and Google Play!
+                        Now out on the App Store! (Google Play coming soon)
                     </p>
                 </div>
             </section>
