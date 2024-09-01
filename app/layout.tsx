@@ -3,6 +3,7 @@ import { notosans, lato, inter } from '@/ui/fonts';
 import Header from '@/ui/components/header';
 import Footer from '@/ui/components/footer';
 import { Metadata } from 'next';
+import Banner from '@/ui/components/banner';
 
 export const metadata: Metadata = {
     title: 'Runway'
@@ -21,6 +22,8 @@ export default function RootLayout({
                 <Header />
                 {children}
                 <Footer />
+
+                <Banner />
             </body>
         </html>
     );

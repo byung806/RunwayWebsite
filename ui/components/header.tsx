@@ -1,10 +1,12 @@
-import Link from 'next/link';
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
 import { basePath } from '../../next.config';
 
 export default function Header() {
     return (
-        <header className="fixed top-0 z-10 flex w-full items-center justify-between border-b border-[#dedede] bg-white px-4 sm:px-14 md:px-28 py-1 sm:py-2 md:py-3 font-bold">
+        <header className="fixed top-0 z-10 flex w-full items-center justify-between border-b border-[#dedede] bg-white px-4 py-1 font-bold sm:px-14 sm:py-2 md:px-28 md:py-3">
             <Link href="/" className="flex items-center gap-2 md:gap-4">
                 <Image
                     src={`${basePath}/icon.png`}
@@ -24,7 +26,7 @@ export default function Header() {
                     FAQ
                 </Link>
                 <Link
-                    href="/features"
+                    href="/#features"
                     className="rounded-full p-2 px-4 text-lg text-[#6b6b78] transition duration-300 hover:bg-[#f1f2f4] hover:text-[#2e2e2e]"
                 >
                     Features

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 // const nextConfig = {};
 const nextConfig = {
-    basePath: "/RunwayWebsite",
+    basePath: "",
     output: "export",  // <=== enables static exports
     reactStrictMode: true,
     images: { unoptimized: true }
