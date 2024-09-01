@@ -107,17 +107,17 @@ export default function Page() {
                             The ultimate daily learning app, for iOS and
                             Android.
                         </p>
-                        <form className="flex flex-col space-x-4 font-bold">
+                        <form className="flex flex-col space-x-4">
                             {/* <Link href="/" className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105">
                                     <p className="text-center text-white">Download, it's free</p>
                                 </Link> */}
                             <Link
                                 href={DOWNLOAD_LINK}
-                                className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
+                                className="flex w-fit font-bold flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
                             >
                                 <FaApple className="text-2xl text-white" />
                                 <p className="text-center text-lg text-white">
-                                    Download
+                                    Download, it's free
                                 </p>
                             </Link>
                         </form>
@@ -166,6 +166,25 @@ export default function Page() {
                 />
             </div>
 
+            <section className="flex flex-col items-center space-y-4 md:space-y-8 py-14 md:py-28">
+                <h1 className="text-4xl md:text-6xl font-bold text-center">
+                    Ready to take off?
+                </h1>
+                <p className="text-lg md:text-2xl font-bold text-[#6b6b78] text-center">
+                    You won't regret it. We promise.
+                </p>
+                <form className="flex flex-col space-x-4">
+                    <Link
+                        href={DOWNLOAD_LINK}
+                        className="flex w-fit font-bold flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
+                    >
+                        <FaApple className="text-2xl text-white" />
+                        <p className="text-center text-lg text-white">
+                            Download
+                        </p>
+                    </Link>
+                </form>
+            </section>
             {/* but don't take our word for it. see for yourself! then add reviews */}
         </section>
     );
