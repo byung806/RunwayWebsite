@@ -128,7 +128,7 @@ export default function Page() {
                 </section>
             </RevealWrapper>
 
-            <div id='features' className="flex flex-col space-y-20">
+            <div id='features' className="flex flex-col space-y-20 pt-14 md:pt-28">
                 <FeatureCard
                     side="left"
                     tag="Great for your schedule"
