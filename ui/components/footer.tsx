@@ -23,7 +23,7 @@ const LINKS = [
 
 export default function Footer() {
     return (
-        <footer className="z-10 flex w-full flex-col justify-start space-y-10 md:space-y-0 bg-[#f2f2f2] px-4 py-10 font-bold sm:px-14 sm:py-10 md:flex-row md:items-start md:space-x-36 md:px-28 md:py-20">
+        <footer className="z-10 flex w-full flex-col justify-start items-center space-y-10 md:space-y-0 bg-[#f2f2f2] px-4 py-10 font-bold sm:px-14 sm:py-10 md:flex-row md:items-start md:space-x-36 md:px-28 md:py-20">
             <div className="flex flex-col space-y-6">
                 <div className="flex items-center space-x-4">
                     <Image
@@ -51,28 +51,30 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            {LINKS.map((link) => (
-                <div
-                    key={link.title}
-                    className="flex flex-col space-y-4"
-                >
-                    <h3 className="text-lg font-bold text-[#2e2e2e]">
-                        {link.title}
-                    </h3>
-                    <ul className="space-y-2">
-                        {link.items.map((item, index) => (
-                            <li key={item}>
-                                <Link
-                                    href={link.links[index]}
-                                    className="text-base text-[#6b6b78] transition duration-300 hover:text-[#2e2e2e]"
-                                >
-                                    {item}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+            <div className='flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-10 lg:space-x-36'>
+                {LINKS.map((link) => (
+                    <div
+                        key={link.title}
+                        className="flex flex-col space-y-4 items-center text-center md:items-start md:text-left"
+                    >
+                        <h3 className="text-lg font-bold text-[#2e2e2e]">
+                            {link.title}
+                        </h3>
+                        <ul className="space-y-2">
+                            {link.items.map((item, index) => (
+                                <li key={item}>
+                                    <Link
+                                        href={link.links[index]}
+                                        className="text-base text-[#6b6b78] transition duration-300 hover:text-[#2e2e2e]"
+                                    >
+                                        {item}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </footer>
     );
 }
