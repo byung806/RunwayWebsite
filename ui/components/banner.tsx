@@ -25,7 +25,7 @@ export default function Banner() {
                     </form>
                 </div>
             </header>
-            <div className="h-20"></div>
+            <div className="h-18"></div>
         </>
     );
 }

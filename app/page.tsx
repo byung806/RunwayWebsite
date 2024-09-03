@@ -5,12 +5,13 @@ import { RevealWrapper } from 'next-reveal';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { FaApple, FaRegPauseCircle, FaRegPlayCircle } from 'react-icons/fa';
+import { FaApple, FaRegPauseCircle, FaRegPlayCircle, FaDiscord } from 'react-icons/fa';
 import TextTransition, { presets } from 'react-text-transition';
 import { basePath } from '../next.config';
 
 export const DOWNLOAD_LINK =
     'https://apps.apple.com/app/runway-gamify-learning/id6639588047';
+export const DISCORD_LINK = 'https://discord.gg/udXRnGF2Qn';
 
 const TEXTS = [
     {
@@ -107,10 +108,7 @@ export default function Page() {
                             The ultimate daily learning app, for iOS and
                             Android.
                         </p>
-                        <form className="flex flex-col space-x-4">
-                            {/* <Link href="/" className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105">
-                                    <p className="text-center text-white">Download, it's free</p>
-                                </Link> */}
+                        <div className='flex flex-col md:flex-row space-y-4 items-center md:space-y-0 md:space-x-4'>
                             <Link
                                 href={DOWNLOAD_LINK}
                                 className="flex w-fit font-bold flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
@@ -120,7 +118,7 @@ export default function Page() {
                                     Download, it's free
                                 </p>
                             </Link>
-                        </form>
+                        </div>
                         {/* <p className="text-center text-lg font-bold text-[#6b6b78] md:text-left">
                         Now out on the App Store! (Google Play coming soon)
                     </p> */}
@@ -166,24 +164,34 @@ export default function Page() {
                 />
             </div>
 
-            <section className="flex flex-col items-center space-y-4 md:space-y-8 py-14 md:py-28">
-                <h1 className="text-4xl md:text-6xl font-bold text-center">
-                    Ready to take off?
+            <section className="flex flex-col items-center space-y-4 py-14 md:py-28 px-10 md:px-40 lg:px-96">
+                <h1 className="text-2xl md:text-4xl font-bold text-center">
+                    If you reached this far, you've got time for a Runway lesson.
                 </h1>
                 <p className="text-lg md:text-2xl font-bold text-[#6b6b78] text-center">
-                    You won't regret it. We promise.
                 </p>
-                <form className="flex flex-col space-x-4">
+                <div className='flex flex-col space-y-4 items-center'>
                     <Link
                         href={DOWNLOAD_LINK}
                         className="flex w-fit font-bold flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
                     >
                         <FaApple className="text-2xl text-white" />
                         <p className="text-center text-lg text-white">
-                            Download
+                            Download, it's free
                         </p>
                     </Link>
-                </form>
+                    <p className="text-lg font-bold text-[#6b6b78]">
+                        or
+                    </p>
+                    <Link href={DISCORD_LINK}>
+                        <div className="flex w-fit font-bold flex-row items-center justify-center space-x-2 rounded-2xl bg-[#7289da] px-6 py-4 transition duration-300 hover:scale-105">
+                            <FaDiscord className="text-2xl text-white" />
+                            <p className="text-center text-lg text-white">
+                                Join our Discord
+                            </p>
+                        </div>
+                    </Link>
+                </div>
             </section>
             {/* but don't take our word for it. see for yourself! then add reviews */}
         </section>
