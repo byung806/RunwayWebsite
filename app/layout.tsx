@@ -4,6 +4,7 @@ import Header from '@/ui/components/header';
 import Footer from '@/ui/components/footer';
 import { Metadata } from 'next';
 import Banner from '@/ui/components/banner';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
     title: 'Runway'
@@ -25,6 +26,7 @@ export default function RootLayout({
 
                 <Banner />
             </body>
+            <GoogleAnalytics gaId="G-PXX3R01E9B" />
         </html>
     );
 }
