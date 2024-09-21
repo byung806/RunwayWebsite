@@ -23,7 +23,7 @@ const LINKS = [
 
 export default function Footer() {
     return (
-        <footer className="z-10 flex w-full flex-col justify-start items-center space-y-10 md:space-y-0 bg-[#f2f2f2] px-4 py-10 font-bold sm:px-14 sm:py-10 md:flex-row md:items-start md:space-x-36 md:px-28 md:py-20">
+        <footer className="z-10 flex w-full flex-col justify-start items-center space-y-10 md:space-y-0 bg-[#ffffff] px-4 py-10 font-bold sm:px-14 sm:py-10 md:flex-row md:items-start md:space-x-36 md:px-28 md:py-20">
             <div className="flex flex-col space-y-6">
                 <div className="flex items-center space-x-4">
                     <Image

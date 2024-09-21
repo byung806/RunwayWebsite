@@ -40,18 +40,18 @@ export default function FeatureCard({
                         height={200}
                     />
                     <div className="flex flex-col items-center space-y-4 md:max-w-[50%] md:items-start">
-                        <div
+                        {/* <div
                             className="inline-block rounded-full px-6 py-3 font-bold"
                             style={{
                                 backgroundColor: tagColor
                             }}
                         >
                             {tag}
-                        </div>
+                        </div> */}
                         <h1 className="py-2 text-center text-4xl font-bold md:text-left md:text-6xl">
                             {title}
                         </h1>
-                        <p className="text-center text-lg font-bold text-[#6b6b78] md:text-left md:text-2xl">
+                        <p className="text-center text-lg font-bold text-[#755486] md:text-left md:text-2xl">
                             {body}
                         </p>
                     </div>
