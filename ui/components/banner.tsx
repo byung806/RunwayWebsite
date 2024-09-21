@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { basePath } from '../../next.config';
-import { DOWNLOAD_LINK } from '@/app/page';
 import { FaApple } from 'react-icons/fa';
+
+const DOWNLOAD_LINK =
+    'https://apps.apple.com/app/runway-learning-made-simple/id6639588047';
 
 export default function Banner() {
     return (

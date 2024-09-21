@@ -14,9 +14,9 @@ import {
 import TextTransition, { presets } from 'react-text-transition';
 import { basePath } from '../next.config';
 
-export const DOWNLOAD_LINK =
-    'https://apps.apple.com/app/runway-gamify-learning/id6639588047';
-export const DISCORD_LINK = 'https://discord.gg/udXRnGF2Qn';
+const DOWNLOAD_LINK =
+    'https://apps.apple.com/app/runway-learning-made-simple/id6639588047';
+const DISCORD_LINK = 'https://discord.gg/udXRnGF2Qn';
 
 const TEXTS = [
     {
