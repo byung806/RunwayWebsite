@@ -43,7 +43,7 @@ export default function Footer() {
                     <a href="https://discord.gg/udXRnGF2Qn" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 bg-blue-500 rounded-full">
                         <FaDiscord />
                     </a>
-                    <a href="https://www.instagram.com/runwaystem" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 bg-pink-500 rounded-full">
+                    <a href="https://www.instagram.com/runwaymobileapp" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 bg-pink-500 rounded-full">
                         <FaInstagram />
                     </a>
                     <a href="https://www.tiktok.com/@runway1694" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 bg-black rounded-full">
