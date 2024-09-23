@@ -3,6 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { basePath } from '../../next.config';
+import { FaApple } from 'react-icons/fa';
+
+const DOWNLOAD_LINK =
+    'https://apps.apple.com/app/runway-learning-made-simple/id6639588047';
 
 export default function Header() {
     return (
@@ -29,7 +33,7 @@ export default function Header() {
                     </p>
                 </div>
             </Link>
-            <div className="flex gap-4 text-[#f3e1fc]">
+            <div className="flex gap-0 md:gap-4 text-[#f3e1fc]">
                 {/* <Link href="/about-us" className="text-lg text-white rounded-full hover:bg-[#252525] p-2 px-4 transition duration-300">About Us</Link> */}
                 {/* <Link href="/our-mission" className="text-lg text-white rounded-full hover:bg-[#252525] p-2 px-4 transition duration-300">Our Mission</Link> */}
                 <Link
@@ -43,6 +47,15 @@ export default function Header() {
                     className="rounded-full p-2 px-4 text-lg transition duration-300 hover:bg-[#f1f2f4] hover:text-[#2e2e2e]"
                 >
                     Features
+                </Link>
+                <Link
+                    href={DOWNLOAD_LINK}
+                    className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-4 py-1 transition duration-300 hover:scale-105"
+                >
+                    <FaApple className="text-2xl text-white" />
+                    <p className="text-center text-lg text-white">
+                        Download for free
+                    </p>
                 </Link>
             </div>
         </header>
