@@ -50,7 +50,7 @@ export default function Header() {
                 </Link>
                 <Link
                     href={DOWNLOAD_LINK}
-                    className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-4 py-1 transition duration-300 hover:scale-105"
+                    className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-4 py-1 transition duration-300 hover:scale-105 absolute opacity-0 pointer-events-none md:pointer-events-auto md:static md:opacity-100"
                 >
                     <FaApple className="text-2xl text-white" />
                     <p className="text-center text-lg text-white">
