@@ -1,11 +1,22 @@
 'use client';
 
+import FeatureCard from '@/ui/components/featurecard';
+import { RevealWrapper } from 'next-reveal';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { FaApple, FaRegPauseCircle, FaRegPlayCircle } from 'react-icons/fa';
+import {
+    FaApple,
+    FaRegPauseCircle,
+    FaRegPlayCircle,
+    FaDiscord
+} from 'react-icons/fa';
 import TextTransition, { presets } from 'react-text-transition';
 import { basePath } from '../next.config';
+
+const DOWNLOAD_LINK =
+    'https://apps.apple.com/app/runway-learning-made-simple/id6639588047';
+const DISCORD_LINK = 'https://discord.gg/udXRnGF2Qn';
 
 const TEXTS = [
     {
@@ -51,113 +62,161 @@ export default function Page() {
     }, [isPlaying]);
 
     return (
-        <section className="flex flex-col items-center">
+        <section className="flex flex-col items-center pb-14">
             {/* Header height */}
             <div className="h-16"></div>
 
-            <section className="flex flex-col items-center space-y-8 px-4 py-10 md:flex-row md:space-x-8 md:space-y-0 md:px-10 md:py-40">
-                <Image
-                    className="flex md:w-80 lg:w-[30rem]"
-                    src={`${basePath}/ss-1-square.png`}
-                    alt="phone screenshot"
-                    width={300}
-                    height={300}
-                />
-                <div className="flex flex-col items-center space-y-6 md:items-start">
-                    <h1 className="relative text-center text-3xl font-bold leading-[2.5rem] sm:leading-[2.5rem] md:w-full md:text-left md:text-4xl md:leading-[3rem] lg:text-4xl lg:leading-[3.5rem] xl:text-6xl xl:leading-[4.5rem]">
-                        Learn about{' '}
-                        <button
-                            onClick={() => setIsPlaying(!isPlaying)}
-                            className="z-10 text-lg text-[#d1d0d2] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl"
-                        >
-                            {isPlaying ? (
-                                <FaRegPauseCircle />
-                            ) : (
-                                <FaRegPlayCircle />
-                            )}
-                        </button>{' '}
-                        <br />
-                        <div className="absolute left-1/2 -translate-x-1/2 transform items-center justify-center md:left-0 md:transform-none">
-                            <TextTransition
-                                inline={true}
-                                className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl"
-                                springConfig={presets.wobbly}
-                                style={{
-                                    color: TEXTS[index % TEXTS.length].color
-                                }}
-                            >
-                                {TEXTS[index % TEXTS.length].name}
-                            </TextTransition>
-                        </div>{' '}
-                        <br />
-                        in 2 minutes
-                    </h1>
-                    <p className="text-center text-lg font-bold text-[#6b6b78] md:text-left">
-                        The ultimate daily learning app, for iOS and Android.
-                    </p>
-                    <form className="flex flex-col space-x-4 font-bold">
-                        {/* <Link href="/" className="px-10 bg-[#8b45a4] py-4 w-fit rounded-2xl transition duration-300 hover:scale-105">
-                                    <p className="text-center text-white">Download, it's free</p>
-                                </Link> */}
-                        <Link
-                            href="https://apps.apple.com/app/runway-gamify-learning/id6639588047"
-                            className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
-                        >
-                            <FaApple className="text-2xl text-white" />
-                            <p className="text-center text-lg text-white">
-                                Download
-                            </p>
-                        </Link>
-                    </form>
-                    <p className="text-center text-lg font-bold text-[#6b6b78] md:text-left">
-                        Now out on the App Store! (Google Play coming soon)
-                    </p>
-                </div>
-            </section>
-
-            <div className="mx-8 flex max-w-7xl flex-col gap-8 text-white md:flex-row">
-                <div className="flex h-full w-full flex-col items-center space-y-4 rounded-2xl bg-[#252525] bg-gradient-to-tr from-blue-600 to-cyan-600 p-10 text-center transition duration-300 hover:scale-105">
-                    <h1 className="text-4xl font-bold">Habit-building.</h1>
-                    <p className="text-2xl text-[#dac8da]">
-                        Runway uses proven techniques to help you learn
-                        something new every day.
-                    </p>
-                </div>
-                <div className="flex h-full w-full flex-col items-center space-y-4 rounded-2xl bg-[#252525] bg-gradient-to-br from-pink-600 to-purple-600 p-10 text-center transition duration-300 hover:scale-105">
-                    <h1 className="text-4xl font-bold">Convenient.</h1>
-                    <p className="text-2xl text-[#dac8da]">
-                        Runway&apos;s unique 2 minutes per day lessons easily
-                        fit into your busy schedule.
-                    </p>
-                </div>
-                <div className="flex h-full w-full flex-col items-center space-y-4 rounded-2xl bg-[#252525] bg-gradient-to-b from-orange-600 to-red-600 p-10 text-center transition duration-300 hover:scale-105">
-                    <h1 className="text-4xl font-bold">Competitive.</h1>
-                    <p className="text-2xl text-[#dac8da]">
-                        Runway gamifies learning - add friends and compete with
-                        them, or test your skills against the world.
-                    </p>
-                </div>
-            </div>
-
-            {/* <div className="flex h-screen flex-col items-center justify-center space-y-8">
-                <div className="flex items-center space-x-8">
-                    <div className="w-[540px] space-y-8 sm:w-full md:w-[540px]">
-                        <h1 className="py-2 text-6xl font-bold">
-                            Make learning actually cool.
-                        </h1>
-                        <p className="text-2xl font-bold text-[#6b6b78]">
-                            Fun, bite-sized lessons that hack your brain to
-                            enjoy learning. Earn a streak and up your points.
-                        </p>
-                    </div>
+            <RevealWrapper
+                origin="bottom"
+                delay={0}
+                duration={600}
+                distance="80px"
+            >
+                <section className="flex flex-col items-center justify-center space-y-8 px-4 py-10 md:flex-row md:space-x-8 md:space-y-0 md:px-10 md:pb-12 md:pt-24">
                     <Image
-                        src={`${basePath}/ss-2.png`}
+                        className="flex md:w-80 lg:w-[30rem]"
+                        src={`${basePath}/new-ss-square.png`}
                         alt="phone screenshot"
                         width={300}
-                        height={500}
+                        height={300}
                     />
+                    <div className="flex flex-col items-center space-y-6 md:items-start md:max-w-[40%]">
+                        {/* <div className="flex items-center space-x-4">
+                            <Image
+                                className="flex rounded-3xl"
+                                src={`${basePath}/icon.png`}
+                                alt="runway icon"
+                                width={80}
+                                height={80}
+                            />
+                            <p className='text-5xl'>
+                                Runway
+                            </p>
+                        </div> */}
+                        <h1 className="relative text-center text-5xl leading-[3rem] md:w-full md:text-left md:text-5xl md:leading-[3rem] lg:text-5xl lg:leading-[3.5rem] xl:text-6xl xl:leading-[4rem]">
+                            Learn about{' '}
+                            <button
+                                onClick={() => setIsPlaying(!isPlaying)}
+                                className="z-10 text-lg text-[#d1d0d2] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl"
+                            >
+                                {isPlaying ? (
+                                    <FaRegPauseCircle />
+                                ) : (
+                                    <FaRegPlayCircle />
+                                )}
+                            </button>{' '}
+                            <br />
+                            <div className="absolute left-1/2 -translate-x-1/2 transform items-center justify-center md:left-0 md:transform-none">
+                                <TextTransition
+                                    inline={true}
+                                    // className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl"
+                                    springConfig={presets.wobbly}
+                                    style={{
+                                        color: TEXTS[index % TEXTS.length].color
+                                    }}
+                                >
+                                    {TEXTS[index % TEXTS.length].name}
+                                </TextTransition>
+                            </div>{' '}
+                            <br />
+                            in 2 minutes
+                        </h1>
+                        <p className="text-center text-xl md:text-2xl text-[#755486] md:text-left">
+                            The ultimate daily learning app, for iOS and Android.
+                        </p>
+                        <a
+                            href="https://apps.apple.com/us/app/runway-gamify-learning/id6639588047?itsct=apps_box_badge&amp;itscg=30200"
+                            className="border-radius-[13px] inline-block h-[83px] w-[250px] overflow-hidden transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1724630400"
+                                alt="Download on the App Store"
+                                className="border-radius-[13px] h-[83px] w-[250px]"
+                            />
+                        </a>
+                    </div>
+                </section>
+            </RevealWrapper>
+
+            {/* <a
+                href="https://www.producthunt.com/posts/runway-10?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-runway&#0045;10"
+                target="_blank"
+            >
+                <img
+                    src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=486339&theme=light"
+                    alt="Runway - Another&#0032;learning&#0032;app&#0063;&#0032;Yes&#0044;&#0032;but&#0032;100&#0037;&#0032;free&#0032;and&#0032;with&#0032;a&#0032;twist | Product Hunt"
+                    width="250"
+                    height="54"
+                />
+            </a> */}
+
+            <div
+                id="features"
+                className="flex flex-col space-y-2"
+            >
+                <FeatureCard
+                    side="left"
+                    tag="Great for your schedule"
+                    tagColor="#fdded6"
+                    title="2 min a day ⏰"
+                    body="Runway is tailored to your schedule. 2 min every day. Simple."
+                    image="IMG_2625-portrait"
+                />
+
+                <FeatureCard
+                    side="right"
+                    tag="Great for your brain"
+                    tagColor="#ddf4e4"
+                    title="Build strong habits 💪"
+                    body="Hack your brain to enjoy learning."
+                    image="IMG_2632-portrait"
+                />
+
+                <FeatureCard
+                    side="left"
+                    tag="Great for your friends"
+                    tagColor="#cceafd"
+                    title="Beat your friends 🥇"
+                    body="or they'll leave you in the dust!"
+                    image="IMG_2614-portrait"
+                />
+
+                <FeatureCard
+                    side="right"
+                    tag="Great for your wallet"
+                    tagColor="#fde9cb"
+                    title="100% free"
+                    body="Learning should be completely free, to everyone."
+                    image="IMG_2620-portrait"
+                />
+            </div>
+
+            <section className="flex flex-col items-center space-y-4 px-10 py-14 md:px-40 md:py-28 lg:px-96">
+                <h1 className="text-center text-2xl md:text-4xl">
+                    Join 500+ users already learning with Runway!
+                </h1>
+                <p className="text-center text-lg text-[#6b6b78] md:text-2xl"></p>
+                <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <Link
+                        href={DOWNLOAD_LINK}
+                        className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
+                    >
+                        <FaApple className="text-2xl text-white" />
+                        <p className="text-center text-lg text-white">
+                            Download, it's free
+                        </p>
+                    </Link>
+                    <Link href={DISCORD_LINK}>
+                        <div className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#7289da] px-6 py-4 transition duration-300 hover:scale-105">
+                            <FaDiscord className="text-2xl text-white" />
+                            <p className="text-center text-lg text-white">
+                                Join our Discord
+                            </p>
+                        </div>
+                    </Link>
                 </div>
-            </div> */}
+            </section>
+            {/* but don't take our word for it. see for yourself! then add reviews */}
         </section>
     );
 }

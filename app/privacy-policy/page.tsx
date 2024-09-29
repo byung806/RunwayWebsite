@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
     return (
         <div className="mx-auto my-36 flex max-w-2xl flex-col space-y-6 px-10 leading-relaxed">
             <h1 className="self-center text-4xl font-bold md:text-6xl">
-                Privacy Policy
+                Privacy policy
             </h1>
             <p className="self-center text-lg font-bold text-[#6b6b78] md:text-xl">
                 Last updated August 24, 2024

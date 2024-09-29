@@ -1,10 +1,11 @@
 'use client';
-import React, { useEffect, useState } from "react";
+// @ts-expect-error
 import Slider from 'react-slick';
-import Image from 'next/image';
-import { basePath } from '@/next.config';
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+
+import Image from 'next/image';
+import { basePath } from '../../next.config';
 
 
 export default function Feature() {
@@ -15,17 +16,24 @@ export default function Feature() {
      }, []);*/
 
 
-    const settings = {
+    // const settings = {
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 3000,
+    //     arrows: true,
+    //     adaptiveHeight: true,
+    // };
+    var settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: true,
-        adaptiveHeight: true,
-    };
+        slidesToScroll: 1
+      };
     /*if (!isMounted) {
         return null;
     }*/

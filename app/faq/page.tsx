@@ -11,11 +11,11 @@ export default function FAQ() {
         },
         {
             question: "What platforms can I download Runway on?",
-            answer: "Runway is available on both the Apple App Store and Google Play Store!",
+            answer: "Runway is available on the App Store and coming soon to Google Play!",
         },
         {
             question: "Where do you get your content from?",
-            answer: "We have a team of content creators who each specialize in a certain area. For example, we have Sienna, our astronomy expert, and Oliver, our chemistry expert! All our content is then edited by our chief editor Bryan to ensure quality.",
+            answer: "We have a team of content creators who each specialize in a certain area, many of whom are passionate former Ivy League students. None of our content makes it to the app without first being reviewed rigorously.",
         },
         {
             question: "Who can use Runway?",
@@ -28,38 +28,20 @@ export default function FAQ() {
     ];
 
     return (
-        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] px-10 mx-auto min-h-screen">
+        <div className="flex flex-col gap-4 justify-center items-center pt-10 max-w-[70rem] px-10 mx-auto min-h-screen py-20">
             {/* Header height */}
             <div className='h-20'></div>
 
-            <p className="text-black text-4xl md:text-6xl mb-16 text-center leading-tight font-bold">Frequently Asked Questions</p>
+            <p className="text-black text-4xl md:text-6xl text-center leading-tight font-bold">Frequently Asked Questions</p>
 
-            {faqData.map((faq, index) => {
-                const [open, setOpen] = useState(false);
-                return (
-                    <div key={index} className="w-full">
-                        <button
-                            className="w-full text-left text-xl p-5 bg-[#f1f2f4] rounded-xl focus:outline-none"
-                            onClick={() => { setOpen(!open); }}
-                        >
-                            {faq.question}
-                            {open && (
-                                <div className="mt-2 text-base bg-[#f1f2f4] text-[#6b6b78] rounded-lg">
-                                    {faq.answer}
-                                </div>
-                            )}
-                        </button>
-                    </div>
-                );
-            })}
             <div className="flex flex-col items-center gap-2 pb-10">
                 <p className="text-black text-lg">
                     Contact us at <a href="mailto:runwaystem@gmail.com" className="text-blue-500 underline">runwaystem@gmail.com</a>
                     {' '}
-                    and follow us on social media!
+                    or DM us on social media!
                 </p>
                 <div className="flex space-x-4 mt-2">
-                    <a href="https://www.instagram.com/runwaystem" target="_blank" rel="noopener noreferrer" className="text-pink-500 text-3xl">
+                    <a href="https://www.instagram.com/runwaymobileapp" target="_blank" rel="noopener noreferrer" className="text-pink-500 text-3xl">
                         <FaInstagram />
                     </a>
                     <a href="https://www.tiktok.com/@runway1694" target="_blank" rel="noopener noreferrer" className="text-black text-3xl">
@@ -67,6 +49,25 @@ export default function FAQ() {
                     </a>
                 </div>
             </div>
+
+            {faqData.map((faq, index) => {
+                const [open, setOpen] = useState(false);
+                return (
+                    <div key={index} className="w-full">
+                        <button
+                            className="w-full text-left text-xl p-5 bg-[#3b0051] text-[#f3e1fc] rounded-xl focus:outline-none"
+                            onClick={() => { setOpen(!open); }}
+                        >
+                            {faq.question}
+                            {open && (
+                                <div className="mt-2 text-base text-[#9d6cb0] rounded-lg">
+                                    {faq.answer}
+                                </div>
+                            )}
+                        </button>
+                    </div>
+                );
+            })}
         </div>
     );
 }
