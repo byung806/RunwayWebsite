@@ -73,6 +73,31 @@ export default function Footer() {
                     </ul>
                 </div>
             ))}
+            <div className="flex flex-col space-y-6">
+                <div className="flex items-center space-x-4">
+                    <span className="text-xl font-bold">Partners</span>
+                </div>
+                <div className="flex space-x-4 mt-2">
+                    <a href="https://klinn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 rounded-lg">
+                        <Image
+                            src={`${basePath}/klinn.png`}
+                            width={70}
+                            height={70}
+                            alt="Klinn Logo"
+                            className='rounded-lg'
+                        />
+                    </a>
+                    <a href="http://americanyoungartcircles.org" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 rounded-lg">
+                        <Image
+                            src={`${basePath}/ayac.jpeg`}
+                            width={70}
+                            height={70}
+                            alt="AYAC Logo"
+                            className='rounded-lg'
+                        />
+                    </a>
+                </div>
+            </div>
         </footer>
     );
 }
