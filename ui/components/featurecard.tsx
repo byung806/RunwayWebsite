@@ -33,7 +33,7 @@ export default function FeatureCard({
                     className={`flex items-center justify-center space-y-4 md:flex-row md:space-x-8 md:space-y-0 ${side === 'right' ? 'flex-col md:flex-row' : 'flex-col md:flex-row-reverse'}`}
                 >
                     <Image
-                        className="md:w-60"
+                        className="md:w-80"
                         src={`${basePath}/${image}.png`}
                         alt="phone screenshot"
                         width={200}

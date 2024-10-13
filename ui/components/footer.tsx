@@ -5,17 +5,17 @@ import { FaDiscord, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 const LINKS = [
     {
-        title: 'Sections',
+        title: 'SECTIONS',
         items: ['Home', 'Features', 'FAQ'],
         links: ['/', '/features', '/faq']
     },
     {
-        title: 'Resources',
+        title: 'RESOURCES',
         items: ['Contact'],
         links: ['/faq']
     },
     {
-        title: 'Others',
+        title: 'OTHERS',
         items: ['Privacy'],
         links: ['/privacy-policy']
     }
@@ -23,18 +23,19 @@ const LINKS = [
 
 export default function Footer() {
     return (
-        <footer className="z-10 flex w-full flex-col justify-start items-center space-y-10 md:space-y-0 bg-[#ffffff] px-4 py-10 font-bold sm:px-14 sm:py-10 md:flex-row md:items-start md:space-x-36 md:px-28 md:py-20">
+        <footer className="z-10 flex w-full flex-col justify-start items-center space-y-10 md:space-y-0 bg-[#2d2d2d] px-4 py-10 font-bold sm:px-14 sm:py-10 md:flex-row md:items-start md:space-x-36 md:px-28 md:py-20">
             <div className="flex flex-col space-y-6">
                 <div className="flex items-center space-x-4">
                     <Image
+                        className="rounded-xl"
                         src={`${basePath}/icon.png`}
                         width={50}
                         height={50}
                         alt="Runway Logo"
                     />
-                    <span className="text-xl font-bold">Runway</span>
+                    <span className="text-xl font-bold text-white">Runway</span>
                 </div>
-                <p className="text-base text-[#6b6b78]">
+                <p className="text-base text-white">
                     Learn every day.
                     <br />
                     Have fun doing it.
@@ -55,9 +56,9 @@ export default function Footer() {
                 {LINKS.map((link) => (
                     <div
                         key={link.title}
-                        className="flex flex-col space-y-4 items-center text-center md:items-start md:text-left"
+                        className="flex flex-col space-y-6 items-center text-center md:items-start md:text-left"
                     >
-                        <h3 className="text-lg font-bold text-[#2e2e2e]">
+                        <h3 className="text-lg font-bold text-white">
                             {link.title}
                         </h3>
                         <ul className="space-y-2">
@@ -65,7 +66,7 @@ export default function Footer() {
                                 <li key={item}>
                                     <Link
                                         href={link.links[index]}
-                                        className="text-base text-[#6b6b78] transition duration-300 hover:text-[#2e2e2e]"
+                                        className="text-base text-[#eeeeee] transition duration-300 hover:text-[#cccccc]"
                                     >
                                         {item}
                                     </Link>

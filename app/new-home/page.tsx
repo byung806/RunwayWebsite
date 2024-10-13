@@ -12,7 +12,7 @@ import {
     FaDiscord
 } from 'react-icons/fa';
 import TextTransition, { presets } from 'react-text-transition';
-import { basePath } from '../next.config';
+import { basePath } from '../../next.config';
 
 const DOWNLOAD_LINK =
     'https://apps.apple.com/app/runway-learning-made-simple/id6639588047';
@@ -29,7 +29,7 @@ const TEXTS = [
     },
     {
         name: 'kinematics',
-        color: '#8b45a4'
+        color: '#723687'
     },
     {
         name: 'bioluminescence',
@@ -64,7 +64,7 @@ export default function Page() {
     return (
         <section className="flex flex-col items-center pb-14">
             {/* Header height */}
-            <div className="flex w-screen h-20"></div>
+            <div className="h-16"></div>
 
             <RevealWrapper
                 origin="bottom"
@@ -72,20 +72,15 @@ export default function Page() {
                 duration={600}
                 distance="80px"
             >
-                <section className="flex flex-col py-24 items-center justify-center">
-                    <div className='absolute top-8 md:top-12 rounded-full p-2 px-6 bg-[#e8dbf2]'>
-                        <p className='text-lg text-[#783c8e]'>🥳 Join 600+ learners!</p>
-                    </div>
-                    <div className='flex flex-col items-center justify-center md:flex-row md:space-x-8 space-y-8 md:space-y-0'>
-                        <Image
-                            className="flex md:w-80 lg:w-[30rem]"
-                            src={`${basePath}/new-ss-square.png`}
-                            alt="phone screenshot"
-                            width={300}
-                            height={300}
-                        />
-                        <div className="flex flex-col items-center space-y-6 md:items-start md:max-w-[40%]">
-                            {/* <div className="flex items-center space-x-4">
+                <section className="flex flex-col items-center justify-center w-screen h-screen space-y-6">
+                    {/* <Image
+                        className="flex md:w-80 lg:w-[30rem]"
+                        src={`${basePath}/new-ss-square.png`}
+                        alt="phone screenshot"
+                        width={300}
+                        height={300}
+                    /> */}
+                    {/* <div className="flex items-center space-x-4">
                             <Image
                                 className="flex rounded-3xl"
                                 src={`${basePath}/icon.png`}
@@ -97,55 +92,47 @@ export default function Page() {
                                 Runway
                             </p>
                         </div> */}
-                            <h1 className="relative text-center text-5xl leading-[3rem] md:w-full md:text-left md:text-5xl md:leading-[3rem] lg:text-5xl lg:leading-[3.5rem] xl:text-6xl xl:leading-[4rem]">
-                                Learn about{' '}
-                                <button
-                                    onClick={() => setIsPlaying(!isPlaying)}
-                                    className="z-10 text-lg text-[#d1d0d2] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl"
-                                >
-                                    {isPlaying ? (
-                                        <FaRegPauseCircle />
-                                    ) : (
-                                        <FaRegPlayCircle />
-                                    )}
-                                </button>{' '}
-                                <br />
-                                <div className="absolute left-1/2 -translate-x-1/2 transform items-center justify-center md:left-0 md:transform-none">
-                                    <TextTransition
-                                        inline={true}
-                                        // className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl"
-                                        springConfig={presets.wobbly}
-                                        style={{
-                                            color: TEXTS[index % TEXTS.length].color
-                                        }}
-                                    >
-                                        {TEXTS[index % TEXTS.length].name}
-                                    </TextTransition>
-                                </div>{' '}
-                                <br />
-                                in 2 minutes
-                            </h1>
-                            <p className="text-center text-xl md:text-2xl text-[#755486] md:text-left">
-                                The ultimate daily learning app, for iOS and Android.
-                            </p>
-                            <div className='flex flex-col space-y-2 items-center md:items-start'>
-                                <a
-                                    href="https://apps.apple.com/us/app/runway-gamify-learning/id6639588047?itsct=apps_box_badge&amp;itscg=30200"
-                                    className="border-radius-[13px] inline-block h-[83px] w-[250px] overflow-hidden transition duration-300 hover:scale-105"
-                                >
-                                    <img
-                                        src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1724630400"
-                                        alt="Download on the App Store"
-                                        className="border-radius-[13px] h-[83px] w-[250px]"
-                                    />
-                                </a>
-                                {/* <p className='text-xl'>Join 600+ learners</p> */}
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-
-                    </div>
+                    <h1 className="relative text-center text-5xl leading-[3rem] md:w-full md:text-5xl md:leading-[3rem] lg:text-5xl lg:leading-[3.5rem] xl:text-6xl xl:leading-[4rem]">
+                        Learn about{' '}
+                        <button
+                            onClick={() => setIsPlaying(!isPlaying)}
+                            className="z-10 text-lg text-[#d1d0d2] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl"
+                        >
+                            {isPlaying ? (
+                                <FaRegPauseCircle />
+                            ) : (
+                                <FaRegPlayCircle />
+                            )}
+                        </button>{' '}
+                        <br />
+                        <div className="absolute left-1/2 -translate-x-1/2 transform items-center justify-center">
+                            <TextTransition
+                                inline={true}
+                                // className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl"
+                                springConfig={presets.wobbly}
+                                style={{
+                                    color: TEXTS[index % TEXTS.length].color
+                                }}
+                            >
+                                {TEXTS[index % TEXTS.length].name}
+                            </TextTransition>
+                        </div>{' '}
+                        <br />
+                        in 2 minutes
+                    </h1>
+                    <p className="text-center text-xl md:text-2xl text-[#755486] md:text-left">
+                        The ultimate daily learning app, for iOS and Android.
+                    </p>
+                    <a
+                        href="https://apps.apple.com/us/app/runway-gamify-learning/id6639588047?itsct=apps_box_badge&amp;itscg=30200"
+                        className="border-radius-[13px] inline-block h-[83px] w-[250px] overflow-hidden transition duration-300 hover:scale-105"
+                    >
+                        <img
+                            src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1724630400"
+                            alt="Download on the App Store"
+                            className="border-radius-[13px] h-[83px] w-[250px]"
+                        />
+                    </a>
                 </section>
             </RevealWrapper>
 
@@ -160,30 +147,6 @@ export default function Page() {
                     height="54"
                 />
             </a> */}
-
-            <div className='flex flex-col bg-[#783c8e] w-full justify-center pt-6 pb-8 space-y-8'>
-                <p className='text-2xl md:text-3xl text-white text-center'>Lessons by students and alumni from</p>
-                <div className='flex justify-center space-x-14 flex-wrap'>
-                    <Image
-                        src={`${basePath}/harvard.svg`}
-                        alt="harvard"
-                        width={240}
-                        height={80}
-                    />
-                    <Image
-                        src={`${basePath}/mit.svg`}
-                        alt="mit"
-                        width={80}
-                        height={80}
-                    />
-                    <Image
-                        src={`${basePath}/ivy_league.png`}
-                        alt="ivy league"
-                        width={100}
-                        height={80}
-                    />
-                </div>
-            </div>
 
             <div
                 id="features"
@@ -228,7 +191,7 @@ export default function Page() {
 
             <section className="flex flex-col items-center space-y-4 px-10 py-14 md:px-40 md:py-28 lg:px-96">
                 <h1 className="text-center text-2xl md:text-4xl">
-                    Join 600+ users already learning with Runway!
+                    Join 500+ users already learning with Runway!
                 </h1>
                 <p className="text-center text-lg text-[#6b6b78] md:text-2xl"></p>
                 <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
