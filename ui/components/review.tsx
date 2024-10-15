@@ -9,7 +9,7 @@ interface ReviewProps {
 
 function Review({ rating, reviewText, reviewer }: ReviewProps) {
     return (
-        <div className="text-[#3c3c3f] text-lg rounded-3xl p-10 space-y-5 bg-[#f9faff]">
+        <div className="text-[#3c3c3f] text-lg rounded-3xl p-10 space-y-5 bg-[#f9faff] transition duration-300 hover:scale-105">
             <div className="flex space-x-2">
                 {[...Array(rating)].map((_, index) => (
                     <FaStar key={index} className="text-4xl text-[#ffcb00]" />

@@ -13,14 +13,6 @@ export default function Header() {
         <header className="absolute top-0 z-10 flex w-full items-center justify-between px-8 py-8 font-bold md:px-20 md:py-12">
             {/* bg-[#3b0051] */}
             <Link href="/" className="flex items-center gap-2 md:gap-4">
-                {/* <Image
-                    className="object-cover"
-                    src={`${basePath}/runway-logo-dark-2.png`}
-                    width={120}
-                    height={40}
-                    // fill
-                    alt="Runway Logo"
-                /> */}
                 <div className="flex items-center space-x-2 md:space-x-3">
                     <Image
                         className="flex w-10 md:w-12 rounded-xl md:rounded-2xl"
@@ -32,6 +24,14 @@ export default function Header() {
                     <p className='text-xl md:text-3xl text-[#8b45a4]'>
                         Runway
                     </p>
+                    {/* <Image
+                        className="object-cover"
+                        src={`${basePath}/runway-logo-light-3.png`}
+                        width={200}
+                        height={60}
+                        // fill
+                        alt="Runway Logo"
+                    /> */}
                 </div>
             </Link>
             <div className="flex gap-0 md:gap-4 text-[#41144e]">
