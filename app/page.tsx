@@ -1,15 +1,16 @@
 'use client';
 
 import FeatureCard from '@/ui/components/featurecard';
+import Review from '@/ui/components/review';
 import { RevealWrapper } from 'next-reveal';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import {
     FaApple,
+    FaDiscord,
     FaRegPauseCircle,
-    FaRegPlayCircle,
-    FaDiscord
+    FaRegPlayCircle
 } from 'react-icons/fa';
 import TextTransition, { presets } from 'react-text-transition';
 import { basePath } from '../next.config';
@@ -62,7 +63,7 @@ export default function Page() {
     }, [isPlaying]);
 
     return (
-        <section className="flex flex-col items-center pb-14">
+        <section className="flex flex-col items-center">
             {/* Header height */}
             <div className="flex w-screen h-20"></div>
 
@@ -226,18 +227,68 @@ export default function Page() {
                 />
             </div>
 
-            <section className="flex flex-col items-center space-y-4 px-10 py-14 md:px-40 md:py-28 lg:px-96">
-                <h1 className="text-center text-2xl md:text-4xl">
-                    Join 600+ users already learning with Runway!
+            <section className="flex flex-col items-center space-y-12 py-14 md:py-20 bg-[#ebccff] w-screen">
+                <h1 className="text-center text-3xl md:text-4xl px-10">
+                    See what our 600+ learners are saying
                 </h1>
-                <p className="text-center text-lg text-[#6b6b78] md:text-2xl"></p>
+                <div className='flex flex-col md:flex-row max-w-[60rem] md:space-x-6 space-y-6 md:space-y-0 px-10'>
+                    <div className='flex flex-col space-y-6'>
+                        <Review
+                            rating={5}
+                            reviewText={[
+                                'I stumbled upon this app looking for an educational app for my kids and this app looks perfect!',
+                                'The bite-sized lessons satisfy my kids\' short attention spans and the lessons are engaging. I originally only made an account for my son but I made another account just for myself after I realized how fun it was.',
+                                'Great app!'
+                            ]}
+                            reviewer="katherinel43 - App Store"
+                        />
+                        <Review
+                            rating={5}
+                            reviewText={[
+                                'I just downloaded this app today for my two children and it\'s awesome! They told me they love how easy it is to use and learn! Definitely recommend for others!!'
+                            ]}
+                            reviewer="PreciousMouse567 - App Store"
+                        />
+                    </div>
+                    <div className='flex flex-col space-y-6'>
+                        <Review
+                            rating={5}
+                            reviewText={[
+                                'Beautifully designed UI and simples the learning process as advertised. Would recommend to anyone to give it a try!!'
+                            ]}
+                            reviewer="TJ Alexander II - App Store"
+                        />
+                        <Review
+                            rating={5}
+                            reviewText={[
+                                'The content is easy-to-understand and quick!',
+                                'I can pick up any topic in less than two minutes, which is a great way to continue learning despite a busy schedule. The points system motivates me to keep completing lessons every day.'
+                            ]}
+                            reviewer="jasonlmoa - App Store"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <section className="flex flex-col items-center space-y-8 py-14 md:py-20 bg-[#994cb7] w-screen">
+                <div className='flex flex-col space-y-2 items-center px-20 max-w-[60rem]'>
+                    <Image
+                        className="md:w-80"
+                        src={`${basePath}/runway-logo-dark-2.png`}
+                        alt="runway icon"
+                        width={250}
+                        height={100}
+                    />
+                    {/* <p className="text-2xl text-white md:text-3xl">Daily Learning</p> */}
+                    <p className='text-xl md:text-2xl text-center text-white'>Enjoy learning something new every day! Don't worry if you're busy - try it for free in just 2 minutes every day!</p>
+                </div>
                 <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
                     <Link
                         href={DOWNLOAD_LINK}
-                        className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-[#8b45a4] px-10 py-4 transition duration-300 hover:scale-105"
+                        className="flex w-fit flex-row items-center justify-center space-x-2 rounded-2xl bg-white px-10 py-4 transition duration-300 hover:scale-105"
                     >
-                        <FaApple className="text-2xl text-white" />
-                        <p className="text-center text-lg text-white">
+                        <FaApple className="text-2xl text-[#8b45a4]" />
+                        <p className="text-center text-lg text-[#8b45a4]">
                             Download, it's free
                         </p>
                     </Link>

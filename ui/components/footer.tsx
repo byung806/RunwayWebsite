@@ -78,27 +78,36 @@ export default function Footer() {
             </div>
             <div className="flex flex-col space-y-6">
                 <div className="flex items-center space-x-4">
-                    <span className="text-xl font-bold">Partners</span>
+                    <span className="text-xl font-bold text-white">Partners</span>
                 </div>
-                <div className="flex space-x-4 mt-2">
-                    <a href="https://klinn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 rounded-full">
+                <div className="flex space-x-8 mt-2">
+                    <Link href="https://klinn.works">
                         <Image
                             src={`${basePath}/klinn.png`}
                             width={50}
                             height={50}
                             alt="Klinn Logo"
-                            className="rounded-lg"
+                            className="rounded-lg transition duration-300 hover:scale-105"
                         />
-                    </a>
-                    <a href="http://americanyoungartcircles.org/" target="_blank" rel="noopener noreferrer" className="text-white text-xl p-2 rounded-full">
+                    </Link>
+                    <Link href="http://americanyoungartcircles.org/">
                         <Image
                             src={`${basePath}/ayac.jpeg`}
                             width={50}
                             height={50}
                             alt="AYAC Logo"
-                            className="rounded-lg"
+                            className="rounded-lg transition duration-300 hover:scale-105"
                         />
-                    </a>
+                    </Link>
+                    <Link href="https://www.mocoinnovation.org/">
+                        <Image
+                            src={`${basePath}/moco.png`}
+                            width={50}
+                            height={50}
+                            alt="MoCoInnovation Logo"
+                            className="rounded-lg transition duration-300 hover:scale-105"
+                        />
+                    </Link>
                 </div>
             </div>
         </footer>
