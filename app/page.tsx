@@ -75,7 +75,7 @@ export default function Page() {
             >
                 <section className="flex flex-col py-24 items-center justify-center">
                     <div className='absolute top-8 md:top-12 rounded-full p-2 px-6 bg-[#e8dbf2]'>
-                        <p className='text-lg text-[#783c8e]'>🥳 Join 600+ learners!</p>
+                        <p className='text-lg text-[#783c8e]'>🥳 Join 700+ learners!</p>
                     </div>
                     <div className='flex flex-col items-center justify-center md:flex-row md:space-x-8 space-y-8 md:space-y-0'>
                         <Image
@@ -229,7 +229,7 @@ export default function Page() {
 
             <section className="flex flex-col items-center space-y-12 py-14 md:py-20 bg-[#ebccff] w-screen">
                 <h1 className="text-center text-3xl md:text-4xl px-10">
-                    See what our 600+ learners are saying
+                    See what our 700+ learners are saying
                 </h1>
                 <div className='flex flex-col md:flex-row max-w-[60rem] md:space-x-6 space-y-6 md:space-y-0 px-10'>
                     <div className='flex flex-col space-y-6'>
