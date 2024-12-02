@@ -75,7 +75,7 @@ export default function Page() {
             >
                 <section className="flex flex-col py-24 items-center justify-center">
                     <div className='absolute top-8 md:top-12 rounded-full p-2 px-6 bg-[#e8dbf2]'>
-                        <p className='text-lg text-[#783c8e]'>🥳 Join 700+ learners!</p>
+                        <p className='text-lg text-[#783c8e]'>🥳 Join 1k+ learners!</p>
                     </div>
                     <div className='flex flex-col items-center justify-center md:flex-row md:space-x-8 space-y-8 md:space-y-0'>
                         <Image
@@ -99,7 +99,7 @@ export default function Page() {
                             </p>
                         </div> */}
                             <h1 className="relative text-center text-5xl leading-[3rem] md:w-full md:text-left md:text-5xl md:leading-[3rem] lg:text-5xl lg:leading-[3.5rem] xl:text-6xl xl:leading-[4rem]">
-                                Learn about{' '}
+                                Explore{' '}
                                 <button
                                     onClick={() => setIsPlaying(!isPlaying)}
                                     className="z-10 text-lg text-[#d1d0d2] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl"
@@ -229,7 +229,7 @@ export default function Page() {
 
             <section className="flex flex-col items-center space-y-12 py-14 md:py-20 bg-[#ebccff] w-screen">
                 <h1 className="text-center text-3xl md:text-4xl px-10">
-                    See what our 700+ learners are saying
+                    See what our 1k+ learners are saying
                 </h1>
                 <div className='flex flex-col md:flex-row max-w-[60rem] md:space-x-6 space-y-6 md:space-y-0 px-10'>
                     <div className='flex flex-col space-y-6'>
